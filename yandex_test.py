@@ -19,14 +19,16 @@ def func(count, cost, num_day):
             my_mod += step
             if my_mod > 0.5:
                 my_mod = my_mod - 1
-            if my_mod in b:
+            if round(my_mod, 4) in b:
                 break
-            b.append(my_mod)
+            b.append(round(my_mod, 4))
         
         my_mod2 = b[(num_day-2) % (len(b))]/100
     else:
         my_mod2 = 0
     return "{0:.2f}".format(cost/count + my_mod2)
 
-for i in range(1, 100):
-    print(func(7, 1, i))
+#for i in range(1, 100):
+#    print(func(7, 1, i))
+    
+print(func(7, 1, 10000000005))
